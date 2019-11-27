@@ -1,0 +1,15 @@
+C:\Users\ALABP85\source\repos\WeatherBot - Solution\WeatherBot\bin\Debug\netcoreapp2.1\appsettings.json
+C:\Users\ALABP85\source\repos\WeatherBot - Solution\WeatherBot\bin\Debug\netcoreapp2.1\WeatherBot.deps.json
+C:\Users\ALABP85\source\repos\WeatherBot - Solution\WeatherBot\bin\Debug\netcoreapp2.1\WeatherBot.runtimeconfig.json
+C:\Users\ALABP85\source\repos\WeatherBot - Solution\WeatherBot\bin\Debug\netcoreapp2.1\WeatherBot.runtimeconfig.dev.json
+C:\Users\ALABP85\source\repos\WeatherBot - Solution\WeatherBot\bin\Debug\netcoreapp2.1\WeatherBot.dll
+C:\Users\ALABP85\source\repos\WeatherBot - Solution\WeatherBot\bin\Debug\netcoreapp2.1\WeatherBot.pdb
+C:\Users\ALABP85\source\repos\WeatherBot - Solution\WeatherBot\obj\Debug\netcoreapp2.1\WeatherBot.csprojAssemblyReference.cache
+C:\Users\ALABP85\source\repos\WeatherBot - Solution\WeatherBot\obj\Debug\netcoreapp2.1\WeatherBot.csproj.CoreCompileInputs.cache
+C:\Users\ALABP85\source\repos\WeatherBot - Solution\WeatherBot\obj\Debug\netcoreapp2.1\WeatherBot.RazorAssemblyInfo.cache
+C:\Users\ALABP85\source\repos\WeatherBot - Solution\WeatherBot\obj\Debug\netcoreapp2.1\WeatherBot.RazorAssemblyInfo.cs
+C:\Users\ALABP85\source\repos\WeatherBot - Solution\WeatherBot\obj\Debug\netcoreapp2.1\WeatherBot.AssemblyInfoInputs.cache
+C:\Users\ALABP85\source\repos\WeatherBot - Solution\WeatherBot\obj\Debug\netcoreapp2.1\WeatherBot.AssemblyInfo.cs
+C:\Users\ALABP85\source\repos\WeatherBot - Solution\WeatherBot\obj\Debug\netcoreapp2.1\WeatherBot.RazorTargetAssemblyInfo.cache
+C:\Users\ALABP85\source\repos\WeatherBot - Solution\WeatherBot\obj\Debug\netcoreapp2.1\WeatherBot.dll
+C:\Users\ALABP85\source\repos\WeatherBot - Solution\WeatherBot\obj\Debug\netcoreapp2.1\WeatherBot.pdb
