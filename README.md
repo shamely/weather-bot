@@ -3,6 +3,7 @@ This repository has been created for the Howest workshop about chatbots, and spe
 
 ### Tools needed
 - Visual studio 2017 or 2019
+- Download the ASPNET component for Visual Studio
 - This template project
 - The latest version of the [Bot Emulator](https://github.com/Microsoft/BotFramework-Emulator/releases)
 - The [Bot Framework v4 templates](https://marketplace.visualstudio.com/items?itemName=BotBuilder.botbuilderv4)
@@ -22,3 +23,5 @@ At the end of this session, you will know about:
 -	How to use Luis.ai as NLP for your bot
 -	How to set up your services in the framework
 -	How to build cards for the bot
+
+[Start the workshop with some theory](https://github.com/shamely/weather-bot/wiki/Workshop---Theory)
