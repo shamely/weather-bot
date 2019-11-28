@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ALABP85\\source\\repos\\WeatherBot - Base\\WeatherBot\\WeatherBot.csproj": {}
+    "C:\\Users\\ALABP85\\source\\repos\\WeatherBot-Workshop\\WeatherBot - Base\\WeatherBot\\WeatherBot.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ALABP85\\source\\repos\\WeatherBot - Base\\WeatherBot\\WeatherBot.csproj": {
+    "C:\\Users\\ALABP85\\source\\repos\\WeatherBot-Workshop\\WeatherBot - Base\\WeatherBot\\WeatherBot.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ALABP85\\source\\repos\\WeatherBot - Base\\WeatherBot\\WeatherBot.csproj",
+        "projectUniqueName": "C:\\Users\\ALABP85\\source\\repos\\WeatherBot-Workshop\\WeatherBot - Base\\WeatherBot\\WeatherBot.csproj",
         "projectName": "WeatherBot",
-        "projectPath": "C:\\Users\\ALABP85\\source\\repos\\WeatherBot - Base\\WeatherBot\\WeatherBot.csproj",
+        "projectPath": "C:\\Users\\ALABP85\\source\\repos\\WeatherBot-Workshop\\WeatherBot - Base\\WeatherBot\\WeatherBot.csproj",
         "packagesPath": "C:\\Users\\ALABP85\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ALABP85\\source\\repos\\WeatherBot - Base\\WeatherBot\\obj\\",
+        "outputPath": "C:\\Users\\ALABP85\\source\\repos\\WeatherBot-Workshop\\WeatherBot - Base\\WeatherBot\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

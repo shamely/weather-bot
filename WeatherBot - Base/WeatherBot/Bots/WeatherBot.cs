@@ -16,17 +16,27 @@ namespace WeatherBot.Bots
 	// This IBot implementation can run any type of Dialog.
 	// The use of type parametrization is to allows multiple
 	// different bots to be run at different endpoints within the same project.
-	public class WeatherBot : ActivityHandler
+	public class WeatherBot<T> : ActivityHandler where T : Dialog
 	{
 		protected ILogger Logger;
+		protected readonly IBotServices BotServices;
+
+		protected readonly Dialog Dialog;
 
 		// State management.
 		protected readonly BotState ConversationState;
 		protected readonly BotState UserState;
 
-		public WeatherBot()
+		public WeatherBot(IBotServices botServices, ILogger<WeatherBot<T>> logger, T dialog,
+			ConversationState conversationState, UserState userState)
 		{
-			
+			Logger = logger;
+			BotServices = botServices;
+
+			Dialog = dialog;
+
+			ConversationState = conversationState;
+			UserState = userState;
 		}
 
 		// Method called on each turn. You can either dispatch from the

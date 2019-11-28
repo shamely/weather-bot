@@ -14247,11 +14247,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ALABP85\\source\\repos\\WeatherBot - Solution\\WeatherBot\\WeatherBot.csproj",
+      "projectUniqueName": "C:\\Users\\ALABP85\\source\\repos\\WeatherBot-Workshop\\WeatherBot - Solution\\WeatherBot\\WeatherBot.csproj",
       "projectName": "WeatherBot",
-      "projectPath": "C:\\Users\\ALABP85\\source\\repos\\WeatherBot - Solution\\WeatherBot\\WeatherBot.csproj",
+      "projectPath": "C:\\Users\\ALABP85\\source\\repos\\WeatherBot-Workshop\\WeatherBot - Solution\\WeatherBot\\WeatherBot.csproj",
       "packagesPath": "C:\\Users\\ALABP85\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ALABP85\\source\\repos\\WeatherBot - Solution\\WeatherBot\\obj\\",
+      "outputPath": "C:\\Users\\ALABP85\\source\\repos\\WeatherBot-Workshop\\WeatherBot - Solution\\WeatherBot\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -14334,16 +14334,23 @@
             "version": "[4.6.3, )"
           },
           "Microsoft.NETCore.App": {
+            "suppressParent": "All",
             "target": "Package",
             "version": "[2.1.0, )",
             "autoReferenced": true
           }
         },
         "imports": [
-          "net461"
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
         ],
         "assetTargetFallback": true,
-        "warn": true
+        "warn": true,
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   },
@@ -14352,7 +14359,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'Microsoft.Azure.KeyVault.Core 1.0.0' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.1'. This package may not be fully compatible with your project.",
+      "message": "Package 'Microsoft.Azure.KeyVault.Core 1.0.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v2.1'. This package may not be fully compatible with your project.",
       "libraryId": "Microsoft.Azure.KeyVault.Core",
       "targetGraphs": [
         ".NETCoreApp,Version=v2.1"
