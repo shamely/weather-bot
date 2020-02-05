@@ -18,11 +18,14 @@ namespace WeatherBot.Services.WeatherStack
 		public static WeatherDetails MapToDetails(WeatherStackResult result)
 		{
 			var nearestForecast = result.forecast?.FirstOrDefault().Value;
+			if (nearestForecast == null) return null;
+
+			DateTime.TryParse(nearestForecast?.date ?? "", out var dateResult);
 
 			return new WeatherDetails()
 			{
 				PlaceName = result.location?.name,
-				ForecastDate = DateTime.Parse(nearestForecast?.date),
+				ForecastDate = dateResult,
 				WeatherIconUrl = result.current?.weather_icons?.FirstOrDefault(),
 				CurrentTemp = result.current?.temperature ?? 0,
 				MaxTemp = nearestForecast?.maxtemp ?? 0,

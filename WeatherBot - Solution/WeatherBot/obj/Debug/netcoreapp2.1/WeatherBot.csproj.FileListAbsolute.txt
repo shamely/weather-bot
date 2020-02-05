@@ -32,3 +32,4 @@ C:\Users\ALABP85\source\repos\WeatherBot-Workshop\WeatherBot - Solution\WeatherB
 C:\Users\ALABP85\source\repos\WeatherBot-Workshop\WeatherBot - Solution\WeatherBot\obj\Debug\netcoreapp2.1\WeatherBot.RazorTargetAssemblyInfo.cache
 C:\Users\ALABP85\source\repos\WeatherBot-Workshop\WeatherBot - Solution\WeatherBot\obj\Debug\netcoreapp2.1\WeatherBot.dll
 C:\Users\ALABP85\source\repos\WeatherBot-Workshop\WeatherBot - Solution\WeatherBot\obj\Debug\netcoreapp2.1\WeatherBot.pdb
+C:\Users\ALABP85\source\repos\WeatherBot-Workshop\WeatherBot - Solution\WeatherBot\obj\Debug\netcoreapp2.1\WeatherBot.csprojAssemblyReference.cache

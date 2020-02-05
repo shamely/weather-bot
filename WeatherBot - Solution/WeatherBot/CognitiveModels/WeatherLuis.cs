@@ -5,6 +5,10 @@ using Newtonsoft.Json;
 
 namespace WeatherBot.CognitiveModels
 {
+	/// <summary>
+	/// Convert the generic recognizer that is used for Luis entities and intents into
+	/// a strongly typed one. This helps us for the entities recognition and use in the code.
+	/// </summary>
 	public partial class WeatherLuis : IRecognizerConvert
 	{
 		public string Text;

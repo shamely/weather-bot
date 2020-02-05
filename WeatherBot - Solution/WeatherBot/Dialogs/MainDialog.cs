@@ -62,8 +62,8 @@ namespace WeatherBot.Dialogs
 			var thresholdScore = 0.70;
 
 			// Check if score is too low, then it is not understood.
-			if (luisResult.TopIntent().score / 100 < thresholdScore &&
-			    (qnaResult.FirstOrDefault()?.Score ?? 0) / 100 < thresholdScore)
+			if (luisResult.TopIntent().score < thresholdScore &&
+			    (qnaResult.FirstOrDefault()?.Score ?? 0) < thresholdScore)
 			{
 				var notUnderstood = "I'm sorry but I didn't understand your message. Please try to rephrase it";
 				var notUnderstoodMessage = MessageFactory.Text(notUnderstood, notUnderstood, InputHints.ExpectingInput);
@@ -102,7 +102,7 @@ namespace WeatherBot.Dialogs
 			CancellationToken cancellationToken)
 		{
 			// Check that we ended the LUIS dialog.
-			if (stepContext.Result != null && stepContext.Result is WeatherDetails)
+			if (stepContext.Result != null && stepContext.Result is LuisWeatherDialog)
 			{
 				// End the dialog by replacing the current one with the root one.
 				// We also pass the sentence that we will display in the initial step dialog.

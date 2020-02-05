@@ -5,6 +5,10 @@ using Newtonsoft.Json;
 
 namespace WeatherBot.CognitiveModels
 {
+	/// <summary>
+	/// Convert the generic recognizer that is used for Luis entities and intents into
+	/// a strongly typed one. This helps us for the entities recognition and use in the code.
+	/// </summary>
 	public partial class WeatherLuis : IRecognizerConvert
 	{
 		public string Text;
@@ -54,7 +58,7 @@ namespace WeatherBot.CognitiveModels
 		public void Convert(dynamic result)
 		{
 			var app = JsonConvert.DeserializeObject<WeatherLuis>(JsonConvert.SerializeObject(result,
-				new JsonSerializerSettings {NullValueHandling = NullValueHandling.Ignore}));
+				new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
 			Text = app.Text;
 			AlteredText = app.AlteredText;
 			Intents = app.Intents;

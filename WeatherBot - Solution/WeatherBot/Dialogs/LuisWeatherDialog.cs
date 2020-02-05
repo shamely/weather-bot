@@ -62,10 +62,11 @@ namespace WeatherBot.Dialogs
 			{
 				var somethingWentWrong = "Something went wrong while fetching the weather.";
 				var wrongMessage =
-					MessageFactory.Text(somethingWentWrong, somethingWentWrong, InputHints.IgnoringInput);
-				await stepContext.Context.SendActivityAsync(wrongMessage, cancellationToken);
+					MessageFactory.Text(somethingWentWrong, somethingWentWrong, InputHints.ExpectingInput);
+				//await stepContext.Context.SendActivityAsync(wrongMessage, cancellationToken);
+				await stepContext.PromptAsync(nameof(TextPrompt), new PromptOptions() {Prompt = wrongMessage},
+					cancellationToken);
 
-				
 			}
 			else
 			{
@@ -73,7 +74,7 @@ namespace WeatherBot.Dialogs
 				await stepContext.Context.SendActivityAsync(weatherCardMessage, cancellationToken);
 			}
 
-			return await stepContext.EndDialogAsync(weatherDetails, cancellationToken);
+			return await stepContext.EndDialogAsync(this, cancellationToken);
 		}
 
 		private static Attachment CreateWeatherCard(WeatherDetails weatherDetails)
