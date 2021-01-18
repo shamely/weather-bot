@@ -1,5 +1,5 @@
-# Howest workshop
-This repository has been created for the Howest workshop about chatbots, and specifically the Bot Framework v4 from Microsoft.
+# Chatbot workshop
+This repository has been created for the chatbot workshop about chatbots, and specifically the Bot Framework v4 from Microsoft.
 
 ### Tools needed
 - Visual studio 2017 or 2019
