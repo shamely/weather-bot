@@ -1,0 +1,150 @@
+{
+  "luis_schema_version": "7.0.0",
+  "intents": [
+    {
+      "name": "GetWeather",
+      "features": [
+        {
+          "featureName": "Weather Synonyms",
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "name": "None",
+      "features": [
+        {
+          "featureName": "Weather Synonyms",
+          "isRequired": false
+        }
+      ]
+    }
+  ],
+  "entities": [
+    {
+      "name": "Places",
+      "children": [],
+      "roles": [],
+      "features": [
+        {
+          "featureName": "Weather Synonyms",
+          "isRequired": false
+        }
+      ]
+    }
+  ],
+  "hierarchicals": [],
+  "composites": [],
+  "closedLists": [],
+  "prebuiltEntities": [
+    {
+      "name": "geographyV2",
+      "roles": []
+    }
+  ],
+  "utterances": [
+    {
+      "text": "tell me about the weather in jerusalem",
+      "intent": "GetWeather",
+      "entities": [
+        {
+          "entity": "Places",
+          "startPos": 29,
+          "endPos": 37,
+          "children": []
+        }
+      ]
+    },
+    {
+      "text": "weather in dallas, texas",
+      "intent": "GetWeather",
+      "entities": [
+        {
+          "entity": "Places",
+          "startPos": 11,
+          "endPos": 23,
+          "children": []
+        }
+      ]
+    },
+    {
+      "text": "what is the weather in miami, fl",
+      "intent": "GetWeather",
+      "entities": [
+        {
+          "entity": "Places",
+          "startPos": 23,
+          "endPos": 31,
+          "children": []
+        }
+      ]
+    },
+    {
+      "text": "what is the weather in seattle, wa",
+      "intent": "GetWeather",
+      "entities": [
+        {
+          "entity": "Places",
+          "startPos": 23,
+          "endPos": 33,
+          "children": []
+        }
+      ]
+    },
+    {
+      "text": "what is the weather like in hong kong",
+      "intent": "GetWeather",
+      "entities": [
+        {
+          "entity": "Places",
+          "startPos": 28,
+          "endPos": 36,
+          "children": []
+        }
+      ]
+    },
+    {
+      "text": "what is the weather like in mexico city",
+      "intent": "GetWeather",
+      "entities": [
+        {
+          "entity": "Places",
+          "startPos": 28,
+          "endPos": 38,
+          "children": []
+        }
+      ]
+    },
+    {
+      "text": "what temperature is it in paris, france",
+      "intent": "GetWeather",
+      "entities": [
+        {
+          "entity": "Places",
+          "startPos": 26,
+          "endPos": 38,
+          "children": []
+        }
+      ]
+    }
+  ],
+  "versionId": "0.1",
+  "name": "WeatherBot",
+  "desc": "",
+  "culture": "en-us",
+  "tokenizerVersion": "1.0.0",
+  "patternAnyEntities": [],
+  "regex_entities": [],
+  "phraselists": [
+    {
+      "name": "Weather Synonyms",
+      "mode": true,
+      "words": "weather,climate,rain,winter,temperature,storm,cold,hot,forecast,snow,warm,wet,chilly,colder,humid,windy,sunny,cloudy",
+      "activated": true,
+      "enabledForAllModels": true
+    }
+  ],
+  "regex_features": [],
+  "patterns": [],
+  "settings": []
+}

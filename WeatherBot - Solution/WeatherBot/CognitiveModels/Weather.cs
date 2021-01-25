@@ -5,13 +5,13 @@ using Newtonsoft.Json;
 
 namespace WeatherBot.CognitiveModels
 {
-	/// <summary>
-	/// Convert the generic recognizer that is used for Luis entities and intents into
-	/// a strongly typed one. This helps us for the entities recognition and use in the code.
-	/// </summary>
-	public partial class WeatherLuis : IRecognizerConvert
+	// File generated with the LUISGen tool - Check it up on Github: https://github.com/microsoft/botbuilder-tools/tree/master/packages/LUISGen
+	public partial class Weather : IRecognizerConvert
 	{
+		[JsonProperty("text")]
 		public string Text;
+
+		[JsonProperty("alteredText")]
 		public string AlteredText;
 
 		public enum Intent
@@ -20,36 +20,28 @@ namespace WeatherBot.CognitiveModels
 			None
 		};
 
+		[JsonProperty("intents")]
 		public Dictionary<Intent, IntentScore> Intents;
 
 		public class _Entities
 		{
-			// Pre-built entity.
-			public GeographyV2 geography;
+			// Simple entities
+			public string[] Places;
 
-			// Composite.
-			public class _InstancePlace
-			{
-				public InstanceData[] geography;
-			}
+			// Built-in entities
+			public GeographyV2[] geographyV2;
 
-			public class PlaceClass
-			{
-				public GeographyV2 geography;
-				[JsonProperty("$instance")] public _InstancePlace _instance;
-			}
-
-			public PlaceClass[] Place;
-
-			// Instance.
+			// Instance
 			public class _Instance
 			{
-				public InstanceData[] geography;
-				public InstanceData[] Place;
+				public InstanceData[] Places;
+				public InstanceData[] geographyV2;
 			}
-			[JsonProperty("$instance")] public _Instance _instance;
+			[JsonProperty("$instance")]
+			public _Instance _instance;
 		}
 
+		[JsonProperty("entities")]
 		public _Entities Entities;
 
 		[JsonExtensionData(ReadData = true, WriteData = true)]
@@ -57,7 +49,7 @@ namespace WeatherBot.CognitiveModels
 
 		public void Convert(dynamic result)
 		{
-			var app = JsonConvert.DeserializeObject<WeatherLuis>(JsonConvert.SerializeObject(result,
+			var app = JsonConvert.DeserializeObject<Weather>(JsonConvert.SerializeObject(result,
 				new JsonSerializerSettings {NullValueHandling = NullValueHandling.Ignore}));
 			Text = app.Text;
 			AlteredText = app.AlteredText;
@@ -70,12 +62,13 @@ namespace WeatherBot.CognitiveModels
 		{
 			var maxIntent = Intent.None;
 			var max = 0.0;
-			foreach (var entry in Intents)
+
+			foreach (var (intentName, intentScore) in Intents)
 			{
-				if (entry.Value.Score > max)
+				if (intentScore.Score > max)
 				{
-					maxIntent = entry.Key;
-					max = entry.Value.Score.Value;
+					maxIntent = intentName;
+					max = intentScore.Score.Value;
 				}
 			}
 			return (maxIntent, max);

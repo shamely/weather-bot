@@ -1,10 +1,10 @@
 ﻿// Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 //
-// Generated with Bot Builder V4 SDK Template for Visual Studio EchoBot v4.6.2
+// Generated with Bot Builder V4 SDK Template for Visual Studio CoreBot v4.11.1
 
-using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
 namespace WeatherBot
@@ -13,16 +13,19 @@ namespace WeatherBot
 	{
 		public static void Main(string[] args)
 		{
-			CreateWebHostBuilder(args).Build().Run();
+			CreateHostBuilder(args).Build().Run();
 		}
 
-		public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-			WebHost.CreateDefaultBuilder(args)
-				.ConfigureLogging((logging) =>
+		public static IHostBuilder CreateHostBuilder(string[] args) =>
+			Host.CreateDefaultBuilder(args)
+				.ConfigureWebHostDefaults(webBuilder =>
 				{
-					logging.AddDebug();
-					logging.AddConsole();
-				})
-				.UseStartup<Startup>();
+					webBuilder.ConfigureLogging((logging) =>
+					{
+						logging.AddDebug();
+						logging.AddConsole();
+					});
+					webBuilder.UseStartup<Startup>();
+				});
 	}
 }
