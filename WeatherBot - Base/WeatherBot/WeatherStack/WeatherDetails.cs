@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace WeatherBot.Services.WeatherStack
+namespace WeatherBot.WeatherStack
 {
 	public class WeatherDetails
 	{
@@ -11,25 +11,22 @@ namespace WeatherBot.Services.WeatherStack
 		public int CurrentTemp { get; set; }
 		public int MaxTemp { get; set; }
 		public int MinTemp { get; set; }
-	}
 
-	public static class WeatherDetailsMapper
-	{
-		public static WeatherDetails MapToDetails(WeatherStackResult result)
+		public static WeatherDetails MapWeatherDetails(WeatherStackApiResults result)
 		{
 			var nearestForecast = result.forecast?.FirstOrDefault().Value;
 			if (nearestForecast == null) return null;
 
-			DateTime.TryParse(nearestForecast?.date ?? "", out var dateResult);
+			DateTime.TryParse(nearestForecast.date ?? "", out var dateResult);
 
-			return new WeatherDetails()
+			return new WeatherDetails
 			{
 				PlaceName = result.location?.name,
 				ForecastDate = dateResult,
 				WeatherIconUrl = result.current?.weather_icons?.FirstOrDefault(),
 				CurrentTemp = result.current?.temperature ?? 0,
-				MaxTemp = nearestForecast?.maxtemp ?? 0,
-				MinTemp = nearestForecast?.mintemp ?? 0
+				MaxTemp = nearestForecast.maxtemp,
+				MinTemp = nearestForecast.mintemp
 			};
 		}
 	}

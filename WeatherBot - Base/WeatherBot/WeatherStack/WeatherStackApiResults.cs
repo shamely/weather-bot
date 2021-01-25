@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 
-namespace WeatherBot.Services.WeatherStack
+namespace WeatherBot.WeatherStack
 {
-	public class WeatherStackResult
-{
+	public class WeatherStackApiResults
+	{
 		public Request request { get; set; }
 		public Location location { get; set; }
 		public Current current { get; set; }
@@ -51,11 +51,6 @@ namespace WeatherBot.Services.WeatherStack
 		public string is_day { get; set; }
 	}
 
-	//public class Forecast
-	//{
-	//	public Dictionary<string, ForecastForDate> forecastForDates { get; set; }
-	//}
-
 	public class ForecastForDate
 	{
 		public string date { get; set; }
@@ -64,7 +59,7 @@ namespace WeatherBot.Services.WeatherStack
 		public int mintemp { get; set; }
 		public int maxtemp { get; set; }
 		public int avgtemp { get; set; }
-		public int totalsnow { get; set; }
+		public double totalsnow { get; set; }
 		public float sunhour { get; set; }
 		public int uv_index { get; set; }
 	}
@@ -78,5 +73,4 @@ namespace WeatherBot.Services.WeatherStack
 		public string moon_phase { get; set; }
 		public int moon_illumination { get; set; }
 	}
-
 }
