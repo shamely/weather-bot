@@ -25,12 +25,17 @@ namespace WeatherBot.Bots
 		protected readonly BotState UserState;
 		protected readonly ILogger Logger;
 
+		public IStatePropertyAccessor<ConversationDataState> conversationAccessory;
+
 		public DialogBot(ConversationState conversationState, UserState userState, T dialog, ILogger<DialogBot<T>> logger)
 		{
 			ConversationState = conversationState;
 			UserState = userState;
 			Dialog = dialog;
 			Logger = logger;
+
+			conversationAccessory =
+				conversationState.CreateProperty<ConversationDataState>(nameof(ConversationDataState));
 		}
 
 		public override async Task OnTurnAsync(ITurnContext turnContext, CancellationToken cancellationToken = default(CancellationToken))

@@ -13,6 +13,7 @@ namespace WeatherBot.Dialogs
 	{
 		private Weather _luisResult;
 		private readonly WeatherStackApiServices _weatherStackApiServices;
+		private readonly BotState _conversationState;
 
 		private const string GetPlaceMsgText = "Could you tell me from which city you'd like to get the weather? 🌞";
 		private const string RecapPlaceMsgText = "I understood you want the weather from: ";
@@ -20,9 +21,10 @@ namespace WeatherBot.Dialogs
 		private const string ColdWeatherMsgTxt = "Brrr 🥶, looks like it's cold today. Better wear a hot sweater 🧶";
 		private const string HotWeatherMsgTxt = "Mhhh, I love a nice warm weather ☀️😎. Don't you?";
 
-		public WeatherDialog(WeatherStackApiServices weatherStackApiServices, string id) : base(id)
+		public WeatherDialog(WeatherStackApiServices weatherStackApiServices, BotState conversationState, string id) : base(id)
 		{
 			_weatherStackApiServices = weatherStackApiServices;
+			_conversationState = conversationState;
 
 			AddDialog(new WaterfallDialog(nameof(WaterfallDialog), new WaterfallStep[]
 			{
@@ -42,6 +44,12 @@ namespace WeatherBot.Dialogs
 			{
 				var getPlaceMessage = MessageFactory.Text(GetPlaceMsgText, GetPlaceMsgText, InputHints.ExpectingInput);
 				await stepContext.Context.SendActivityAsync(getPlaceMessage, cancellationToken);
+
+				var accessory = _conversationState.CreateProperty<ConversationDataState>(nameof(ConversationDataState));
+				var conversationData = await accessory.GetAsync(stepContext.Context, () => new ConversationDataState(),
+					cancellationToken);
+				conversationData.IgnoreInterruption = true;
+				await accessory.SetAsync(stepContext.Context, conversationData, cancellationToken);
 
 				return new DialogTurnResult(DialogTurnStatus.Waiting);
 			}

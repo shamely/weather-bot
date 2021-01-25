@@ -19,7 +19,7 @@ namespace WeatherBot.Dialogs
 	public class MainDialog : InterruptionDialog
 	{
 		// Dependency injection uses this constructor to instantiate MainDialog
-		public MainDialog(WeatherRecognizer luisRecognizer, WeatherStackApiServices weatherStackApiServices)
-			: base(luisRecognizer, weatherStackApiServices, nameof(MainDialog)) { }
+		public MainDialog(WeatherRecognizer luisRecognizer, WeatherStackApiServices weatherStackApiServices, ConversationState conversationState)
+			: base(luisRecognizer, weatherStackApiServices, conversationState, nameof(MainDialog)) { }
 	}
 }

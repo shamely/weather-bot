@@ -1,5 +1,6 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Schema;
 using WeatherBot.CognitiveModels;
@@ -12,12 +13,14 @@ namespace WeatherBot.Dialogs
 	{
 		protected readonly WeatherRecognizer LuisRecognizer;
 		protected readonly WeatherStackApiServices WeatherStackApiServices;
+		protected readonly BotState ConversationState;
 		private const double LuisThresholdScore = 0.70;
 
-		public InterruptionDialog(WeatherRecognizer luisRecognizer, WeatherStackApiServices weatherStackApiServices, string id) : base(id)
+		public InterruptionDialog(WeatherRecognizer luisRecognizer, WeatherStackApiServices weatherStackApiServices, BotState conversationState, string id) : base(id)
 		{
 			LuisRecognizer = luisRecognizer;
 			WeatherStackApiServices = weatherStackApiServices;
+			ConversationState = conversationState;
 
 			AddDialog(new WeatherDialog(weatherStackApiServices, nameof(WeatherDialog)));
 			AddDialog(new NotUnderstoodDialog(nameof(NotUnderstoodDialog)));
@@ -46,8 +49,14 @@ namespace WeatherBot.Dialogs
 
 		private async Task<DialogTurnResult> InterruptAsync(DialogContext innerDc, CancellationToken cancellationToken)
 		{
-			if (!string.IsNullOrEmpty(innerDc.ActiveDialog?.Id) && innerDc.ActiveDialog.Id == "WeatherDialog")
+			var accessory = ConversationState.CreateProperty<ConversationDataState>(nameof(ConversationDataState));
+			var conversationData = await accessory.GetAsync(innerDc.Context, () => new ConversationDataState(), cancellationToken);
+
+			if (conversationData.IgnoreInterruption)
 			{
+				conversationData.IgnoreInterruption = false;
+				await accessory.SetAsync(innerDc.Context, conversationData, cancellationToken);
+
 				return null;
 			}
 

@@ -40,7 +40,9 @@ namespace WeatherBot.Dialogs
 			// Hint -> It's in the context
 
 			// TODO Ask for the place if not recognized as an entity
-			
+			// Hint -> Returns a Waiting Dialog status
+			// Hint -> Set the ConversationDataState Ignore Interruption to true using the Accessors (check interruption dialog)
+
 
 			// Skip the wait and go directly to next step.
 			return await stepContext.NextAsync(_luisResult.PlaceEntities, cancellationToken);
