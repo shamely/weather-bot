@@ -1,27 +1,30 @@
 # Chatbot workshop
 This repository has been created for the chatbot workshop about chatbots, and specifically the Bot Framework v4 from Microsoft.
 
-### Tools needed
-- Visual studio 2017 or 2019
-- Download the ASPNET component for Visual Studio
-- This template project
-- The latest version of the [Bot Emulator](https://github.com/Microsoft/BotFramework-Emulator/releases)
-- The [Bot Framework v4 templates](https://marketplace.visualstudio.com/items?itemName=BotBuilder.botbuilderv4)
+## Tools needed
 
-Create free accounts on:
-- [Luis.ai](https://www.luis.ai/home)
-- [WeatherStack](https://weatherstack.com/)
+**To Install/Have on your computer:**
+
+- Visual Studio 2017 or 2019
+- Latest version of the Bot Emulator: [here](https://github.com/Microsoft/BotFramework-Emulator/releases)
+- Download the template project: [here](https://github.com/shamely/weather-bot)
+- _(Optional)_ Templates for Bot Framework v4: [here](https://marketplace.visualstudio.com/items?itemName=BotBuilder.botbuilderv4)
+
+**Accounts to create:**
+
+- Get a student account on [Azure](https://azure.microsoft.com/en-us/free/students/) and create a free LUIS resource via [Luis.ai](https://www.luis.ai/)
+- Create a free account on [WeatherStack](https://weatherstack.com/)
 
 ### Workshop theme
-We are going to create a bot to get the current weather in some places. The bot is going to understand a user asking for the weather through different formulations, grab the place the user is talking about and display a card showing different information from the API.
+We are going to create a bot to get the **current weather** in some places. The bot is going to understand a user asking for the weather through different formulations, grab the place the user is talking about and display a card showing different information from the API.
 
 ![Screenshot result](Pictures/Result_screenshot.png)
 
-At the end of this session, you will know about:
--	How to build a simple bot with the Bot Framework v4 from Microsoft
--	What are the concept of context, dialogs, activities
--	How to use Luis.ai as NLP for your bot
--	How to set up your services in the framework
--	How to build cards for the bot
+Goal of this session:
+
+- Learn about chatbot and the basic concepts
+- Learn how to create a simple chatbot with Microsoft tools
+- The NLP services at your disposal
+- Be able to research more about the topic and understand what you read
 
 [Start the workshop with some theory](https://github.com/shamely/weather-bot/wiki/Workshop---Theory)
