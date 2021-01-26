@@ -1,6 +1,9 @@
 # Chatbot workshop
 This repository has been created for the chatbot workshop about chatbots, and specifically the Bot Framework v4 from Microsoft.
 
+For any question about the workshop, please contact [me at amelie.lemal@realdolmen.com](mailto:amelie.lemal@realdolmen.com).
+
+
 ## Tools needed
 
 **To Install/Have on your computer:**
