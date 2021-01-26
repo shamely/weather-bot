@@ -15,7 +15,7 @@ This repository has been created for the chatbot workshop about chatbots, and sp
 - Get a student account on [Azure](https://azure.microsoft.com/en-us/free/students/) and create a free LUIS resource via [Luis.ai](https://www.luis.ai/)
 - Create a free account on [WeatherStack](https://weatherstack.com/)
 
-### Workshop theme
+## Workshop theme
 We are going to create a bot to get the **current weather** in some places. The bot is going to understand a user asking for the weather through different formulations, grab the place the user is talking about and display a card showing different information from the API.
 
 ![Screenshot result](Pictures/Result_screenshot.png)
